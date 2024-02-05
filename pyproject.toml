@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pcd-registry"
+version = "0.1.0"
+description = "Pointcloud registration pipeline"
+authors = ["Shashwat Kumar"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+open3d = "^0.18.0"
+numpy = "^1.26.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
