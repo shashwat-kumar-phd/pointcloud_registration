@@ -1,15 +1,14 @@
 # Registration Module
 
-This module provides functions for point cloud registration using Open3D. It includes functions for preprocessing point clouds, executing global registration, refining registration using ICP, and performing fast global registration.
+This module provides functions for point cloud registration using Open3D. It includes functions for preprocessing point clouds, executing global registration using RANSAC or fast global registration, and refining registration using ICP.
 
 ## Functions
 
 - `draw_registration_result(source, target, transformation, window_name="open3d")`: Visualize registration results.
 - `preprocess_point_cloud(pcd, voxel_size) -> Tuple[PointCloud, Feature]`: Downsample and compute FPFH feature for a point cloud.
-- `prepare_dataset(voxel_size) -> Tuple[PointCloud, PointCloud, Feature, Feature]`: Load two point clouds and prepare the dataset for registration.
-- `execute_global_registration(source_down, target_down, source_fpfh, target_fpfh, voxel_size, method="RANSAC") -> RegistrationResult`: Execute global registration using RANSAC or FAST.
-- `refine_registration(source, target, result_ransac, voxel_size) -> RegistrationResult`: Refine registration using ICP.
-- `execute_fast_global_registration(source_down, target_down, source_fpfh, target_fpfh, voxel_size) -> RegistrationResult`: Execute fast global registration.
+- `load_dataset(source_path, target_path, voxel_size) -> Tuple[PointCloud, PointCloud, PointCloud, PointCloud, Feature, Feature]`: Load two point clouds and prepare the dataset for registration.
+- `global_registration(source_down, target_down, source_fpfh, target_fpfh, voxel_size, method="RANSAC") -> RegistrationResult`: Execute global registration using RANSAC or FAST.
+- `refine_registration(source, target, global_transformation_result, voxel_size) -> RegistrationResult`: Refine registration using ICP.
 
 ## Dependencies
 
