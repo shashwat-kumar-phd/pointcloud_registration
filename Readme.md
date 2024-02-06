@@ -16,8 +16,6 @@ This module provides functions for point cloud registration using Open3D. It inc
 - open3d
 - numpy
 
-
-
 ## How to Run
 
 1. Ensure you have the required dependencies installed. You can install them using:
@@ -34,9 +32,8 @@ This module provides functions for point cloud registration using Open3D. It inc
 
     ```
     # Example usage
+    Check main.py for example usage.
     ```
-
-
 
 ## Author
 
